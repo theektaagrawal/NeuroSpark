@@ -2,7 +2,9 @@ import { Environment, useGLTF } from "@react-three/drei";
 import { useFrame, RootState } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { AnimationMixer, Object3D } from "three";
-function Cafe()
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
+
+function Cafe(props:{micActive?:boolean})
 {
     const gltf = useGLTF("./models/Cafe.gltf");
     const globalMixer = useRef<AnimationMixer>();
@@ -48,8 +50,26 @@ function Cafe()
     useEffect(() => {
         console.log(gltf.animations)
         AnimCamera.current = gltf.scene.getObjectByName("Camera");
-        PlayAnimation(true);
+        PlayAnimation();
     }, [gltf])
+
+    useEffect(()=>{
+        console.log(props.micActive)
+        if(props.micActive)
+        {
+            //Mic active
+            resetTranscript();
+            SpeechRecognition.startListening();
+        }
+        else
+        {
+            PlayAnimation();
+            SpeechRecognition.stopListening();
+
+            //PROCESS TRANSCRIPT TODO
+            console.log(transcript)
+        }
+    },[props.micActive])
 
     function SetCameraPosition(state: RootState) {
         if (!AnimCamera.current) return;
@@ -58,13 +78,18 @@ function Cafe()
         state.camera.updateMatrixWorld();
     }
 
-    function PlayAnimation(value: boolean)
+    function PlayAnimation()
     {
-        playAnim.current = value;
+        if(playAnim.current === true) return;
+        playAnim.current = true;
         setTimeout(() => {
             playAnim.current = false;
         }, 5100);
     }
+
+
+    const { transcript,resetTranscript } = useSpeechRecognition();
+
 
     return (
         <>
