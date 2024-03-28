@@ -16,13 +16,18 @@ import AgeScalesPage from "./pages/training/AgeScalesPage";
 import ISAAScalesPage from "./pages/training/ISAAScalesPage copy";
 import ColorMatch from "./pages/training/ColorMatch";
 import MemoryGame from "./pages/training/MemoryGame";
-import FaceExpressionDetection from "./pages/training/FaceExpressionDetection";
+// import FaceExpressionDetection from "./pages/training/crocodile";
 import ShapeDetection from "./pages/training/ShapeDetection";
 import MovementSequence from "./pages/training/MovementSequence";
-import All from "./pages/All";
 import Chatbot from "./components/Chatbot";
-import SocialTraining from "./pages/SocialTraining";
 import Metaverse from "./pages/Metaverse";
+import IQTest from "./pages/training/IQTest";
+import ADHDTest from "./pages/training/ADHDTest";
+import AllTrainings from "./pages/training/AllTrainings";
+import ARTraining from "./pages/training/ARTraining";
+import CognitiveTraning from "./pages/training/CognitiveTraning";
+import SocialTraining from "./pages/SocialTraining";
+import CrockieCrocodile from "./pages/training/CrockieCrocodile";
 
 function App()
 {
@@ -47,11 +52,16 @@ function App()
               <Route path="/training/ColorMatch" element={<ColorMatch />} />
               <Route path="/training/memorygame" element={<MemoryGame/>} />
               <Route path="/training/shapedetection" element={<ShapeDetection/>} />
-              <Route path="/training/faceexpressiondetection" element={<FaceExpressionDetection/>} />
+              {/* <Route path="/training/crocodile" element={<FaceExpressionDetection/>} /> */}
               <Route path="/evaluation/movementsequence" element={<MovementSequence/>} />
-              <Route path="/cognitivetraining" element={<All/>} />
-              <Route path="/socialtraining" element={<SocialTraining/>} />
               <Route path="/metaverse" element={<Metaverse />} />
+              <Route path='/evaluation/iqtest' element={<IQTest />} />
+              <Route path='/evaluation/adhdtest' element={<ADHDTest />} />
+              <Route path='/menu' element={<AllTrainings />} />
+              <Route path="/menu/ar" element={<ARTraining />} />
+              <Route path="/menu/cognitive" element={<CognitiveTraning />} />
+              <Route path="/menu/social" element={<SocialTraining />} />
+              <Route path="/training/crocodile" element={<CrockieCrocodile/>} />
             </Routes>
           ) : (
             <Routes>
