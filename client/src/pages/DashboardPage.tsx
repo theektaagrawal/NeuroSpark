@@ -399,8 +399,8 @@ function DashboardPage() {
                       </Link></>) : (<><Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/colorMatch"}>
                         Color Matching
                       </Link>
-                        <Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/shapeDetection"}>
-                          Shape Detection
+                        <Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/aquarium"}>
+                          Sea-quence
                         </Link></>)
                   }
                 </>
@@ -411,8 +411,8 @@ function DashboardPage() {
                         <Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/colorMatch"}>
                           Color Matching
                         </Link>
-                        <Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/shapeDetection"}>
-                          Shape Detection
+                        <Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/aquarium"}>
+                          Sea-quence
                         </Link>
                         <Link className="card bg-primary w-96 grow hover:grow-[2] grid text-center py-16" to={"/training/detection"}>
                           Object Recognition

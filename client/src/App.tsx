@@ -17,7 +17,7 @@ import ISAAScalesPage from "./pages/training/ISAAScalesPage copy";
 import ColorMatch from "./pages/training/ColorMatch";
 import MemoryGame from "./pages/training/MemoryGame";
 // import FaceExpressionDetection from "./pages/training/crocodile";
-import ShapeDetection from "./pages/training/ShapeDetection";
+// import ShapeDetection from "./pages/training/aquarium";
 import MovementSequence from "./pages/training/MovementSequence";
 import Chatbot from "./components/Chatbot";
 import Metaverse from "./pages/Metaverse";
@@ -28,6 +28,7 @@ import ARTraining from "./pages/training/ARTraining";
 import CognitiveTraning from "./pages/training/CognitiveTraning";
 import SocialTraining from "./pages/SocialTraining";
 import CrockieCrocodile from "./pages/training/CrockieCrocodile";
+import SequenceGame from "./pages/training/SequenceGame";
 
 function App()
 {
@@ -51,7 +52,7 @@ function App()
               <Route path="/training/detection" element={<Detection />} />
               <Route path="/training/ColorMatch" element={<ColorMatch />} />
               <Route path="/training/memorygame" element={<MemoryGame/>} />
-              <Route path="/training/shapedetection" element={<ShapeDetection/>} />
+              {/* <Route path="/training/aquarium" element={<ShapeDetection/>} /> */}
               {/* <Route path="/training/crocodile" element={<FaceExpressionDetection/>} /> */}
               <Route path="/evaluation/movementsequence" element={<MovementSequence/>} />
               <Route path="/metaverse" element={<Metaverse />} />
@@ -62,6 +63,7 @@ function App()
               <Route path="/menu/cognitive" element={<CognitiveTraning />} />
               <Route path="/menu/social" element={<SocialTraining />} />
               <Route path="/training/crocodile" element={<CrockieCrocodile/>} />
+              <Route path="/training/aquarium" element={<SequenceGame/>} />
             </Routes>
           ) : (
             <Routes>
