@@ -10,7 +10,7 @@ type Fish = {
 };
 
 export default function SequenceGame() {
-    const count = 3;
+    const [count,setCount] = useState(3);
     const data:Fish[] = [
         {
             id: 1,
@@ -162,6 +162,7 @@ export default function SequenceGame() {
                     setEndMessage('You Won');
                     run(); // Confetti
                     new Audio('../win.mp3').play(); // Play win sound
+                    setCount(prev=>prev+1);
                 }
                 else
                 {

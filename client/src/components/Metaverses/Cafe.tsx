@@ -8,7 +8,7 @@ import {GoogleGenerativeAI} from "@google/generative-ai"
 
 function Cafe(props:{micActive?:boolean})
 {
-    const gltf = useGLTF("./models/Cafe.gltf");
+    const gltf = useGLTF("../models/Cafe.gltf");
     const globalMixer = useRef<AnimationMixer>();
     const NPCMixer = useRef<AnimationMixer>();
     const AnimCamera = useRef<Object3D>();
@@ -84,7 +84,7 @@ function Cafe(props:{micActive?:boolean})
             async function GenerateResponse(input:string)
             {
                 const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-                const result = await model.generateContent("You are a friendly and patient waitress at a family restaurant. A young child with Down Syndrome is sitting at a table with their family. You want to make sure the child feels comfortable and understood, so you use simple language, repeat things if necessary, and give them time to process and respond. Don't include roles in your response! \n Child's Input: "+input);
+                const result = await model.generateContent("You are akanksha a friendly and patient waitress at a family restaurant. A young child with Down Syndrome is sitting at a table with their family. You want to make sure the child feels comfortable and understood, so you use simple language, repeat things if necessary, and give them time to process and respond. Don't include roles and instructions in your response! Only include your dialogue \n Child's Input: "+input);
                 const response = result.response;
                 const text = response.text();
                 return text;
@@ -125,7 +125,7 @@ function Cafe(props:{micActive?:boolean})
 
     return (
         <>
-            <Environment files={'./models/comfy_cafe_2k.exr'} background />
+            <Environment files={'../models/comfy_cafe_2k.exr'} background />
             <primitive object={gltf.scene} />
         </>
     )

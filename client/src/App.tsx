@@ -20,7 +20,7 @@ import MemoryGame from "./pages/training/MemoryGame";
 // import ShapeDetection from "./pages/training/aquarium";
 import MovementSequence from "./pages/training/MovementSequence";
 import Chatbot from "./components/Chatbot";
-import Metaverse from "./pages/Metaverse";
+import CafeUI from "./pages/training/CafeUI";
 import IQTest from "./pages/training/IQTest";
 import ADHDTest from "./pages/training/ADHDTest";
 import AllTrainings from "./pages/training/AllTrainings";
@@ -29,6 +29,8 @@ import CognitiveTraning from "./pages/training/CognitiveTraning";
 import SocialTraining from "./pages/SocialTraining";
 import CrockieCrocodile from "./pages/training/CrockieCrocodile";
 import SequenceGame from "./pages/training/SequenceGame";
+import DogUI from "./pages/training/DogUI";
+import Metaverse from "./pages/training/Metaverse";
 
 function App()
 {
@@ -56,6 +58,8 @@ function App()
               {/* <Route path="/training/crocodile" element={<FaceExpressionDetection/>} /> */}
               <Route path="/evaluation/movementsequence" element={<MovementSequence/>} />
               <Route path="/metaverse" element={<Metaverse />} />
+              <Route path="/metaverse/cafe" element={<CafeUI />} />
+              <Route path="/metaverse/dog" element={<DogUI />} />
               <Route path='/evaluation/iqtest' element={<IQTest />} />
               <Route path='/evaluation/adhdtest' element={<ADHDTest />} />
               <Route path='/menu' element={<AllTrainings />} />
