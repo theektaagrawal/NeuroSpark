@@ -11,9 +11,12 @@ Project Spark is an innovative educational program designed to empower children 
 - **Interactive Learning:** Children can interact with the content in a way that suits their learning style, whether through visuals, audio, or tactile experiences.
 - **Personalized Progress Tracking:** Teachers and parents can track each child's progress and tailor the activities to their individual needs and abilities.
 
-  ## Hosting Link
+## Hosting Link
 
 [Click here to access Project Spark](https://spark-lovat.vercel.app/)
+
+## Presentation (PPT)
+[For better understanding of project](https://www.canva.com/design/DAGA1XJKnPI/amZusCawRyz_aGTyciQ4Cw/edit?utm_content=DAGA1XJKnPI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 You can access Project Spark and start empowering children with special needs to learn in a fun and engaging way!
 
