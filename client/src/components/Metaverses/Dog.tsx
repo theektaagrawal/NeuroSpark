@@ -24,9 +24,9 @@ function Cafe(props:{state:number})
     },[props.state])
 
     const ranges = [
-        [0,3],
-        [3,5],
-        [5,8.333333]
+        [0,1],
+        [1,4],
+        [4,6.66666]
     ]
 
 
