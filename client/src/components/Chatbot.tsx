@@ -13,7 +13,7 @@ function Chatbot()
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const genAI = new GoogleGenerativeAI("AIzaSyBSxXpveJAOfTa7tx7BVqs53PK46unfprM");
+    const genAI = new GoogleGenerativeAI("AIzaSyB9MAqPUsPk5sPesSK3Mbc7-sOnjmxRQ2Y");
 
     async function SendMessage()
     {
