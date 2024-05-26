@@ -66,7 +66,7 @@ function Cafe(props:{micActive?:boolean})
         //stop, // Function to stop the speech or remove it from queue
       } = useSpeech({ text: tts,lang:"en-IN",
         voiceURI:"Microsoft Heera - English (India)",});
-    const genAI = new GoogleGenerativeAI("AIzaSyBSxXpveJAOfTa7tx7BVqs53PK46unfprM");
+    const genAI = new GoogleGenerativeAI("AIzaSyB9MAqPUsPk5sPesSK3Mbc7-sOnjmxRQ2Y");
 
     useEffect(()=>{
         console.log(props.micActive)
