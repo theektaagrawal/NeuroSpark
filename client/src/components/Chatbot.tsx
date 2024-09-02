@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useRef, useState } from "react"
-import {GoogleGenerativeAI} from "@google/generative-ai"
+import Groq from "groq-sdk";
 
 type MessageType = {
     sender: number;
@@ -9,11 +9,11 @@ type MessageType = {
 function Chatbot()
 {
     const [input, setInput] = useState<string>('');
-    const [messages, setMessages] = useState<MessageType[]>([{sender: 0, message: 'Hello'}, {sender: 1, message: 'How can i help you today?'}]);
+    const [messages, setMessages] = useState<MessageType[]>([{sender: 1, message: 'How can i help you today?'}]);
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const genAI = new GoogleGenerativeAI("AIzaSyB9MAqPUsPk5sPesSK3Mbc7-sOnjmxRQ2Y");
+    const groq = new Groq({ apiKey: "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",dangerouslyAllowBrowser: true });
 
     async function SendMessage()
     {
@@ -25,13 +25,23 @@ function Chatbot()
         }
     }
 
-    async function GenerateResponse(input:string)
-    {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-        const result = await model.generateContent("You are a chatbot integrated in our website 'S.P.A.R.K' which stands for Special People achieving remarkable knowledge. An EdTech website for children with down syndrome to help them learn via our recommended training modules curated by our evaluation modules to understand their current capabilties. User Prompt="+input+". Reply in 20 words");
-        const response = await result.response;
-        const text = response.text();
-        setMessages(prev=>[...prev, {sender: 1, message: text}]);
+    async function GenerateResponse(input: string) {
+        const result = await groq.chat.completions.create({
+            messages: [
+                {
+                    role: "system",
+                    content: "You are a chatbot integrated in our website 'S.P.A.R.K' which stands for Special People achieving remarkable knowledge. An EdTech website for children with Down syndrome to help them learn via our recommended training modules curated by our evaluation modules to understand their current capabilities.",
+                },
+                {
+                    role: "user",
+                    content: input,
+                }
+            ],
+            model: "llama3-8b-8192",
+        });
+
+        const responseText = result.choices[0]?.message?.content || "Sorry, I couldn't understand that.";
+        setMessages(prev => [...prev, { sender: 1, message: responseText }]);
     }
 
     useEffect(()=>{
