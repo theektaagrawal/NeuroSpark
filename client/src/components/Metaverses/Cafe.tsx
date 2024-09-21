@@ -64,8 +64,7 @@ function Cafe(props:{micActive?:boolean})
         start, // Function to start the speech or put it in queue
         //pause, // Function to pause the speech
         //stop, // Function to stop the speech or remove it from queue
-      } = useSpeech({ text: tts,lang:"en-IN",
-        voiceURI:"Microsoft Heera - English (India)",});
+      } = useSpeech({ text: tts,lang:"en-IN" });
         const groq = new Groq({ apiKey: "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",dangerouslyAllowBrowser: true });
 
 
@@ -84,7 +83,7 @@ function Cafe(props:{micActive?:boolean})
                         messages: [
                             {
                                 role: "system",
-                                content: "You are Akanksha, a friendly and patient waitress at a family restaurant. A young child with Down Syndrome is sitting at a table with their family. You want to make sure the child feels comfortable and understood, so you use simple language, repeat things if necessary, and give them time to process and respond. Don't include roles and instructions in your response! Only include your dialogue.",
+                                content: "You are a friendly and patient waiter at a family restaurant. A young child with cognitive disability is sitting at a table. You want to make sure the child feels comfortable and understood, so you use simple language, repeat things if necessary, and give them time to process and respond. Don't include roles, instructions and markdowns. Only include your dialogue and stick to the scene.",
 
                             },
                             {
@@ -92,7 +91,7 @@ function Cafe(props:{micActive?:boolean})
                                 content: input,
                             }
                         ],
-                        model: "llama3-8b-8192",
+                        model: "llama-3.1-70b-versatile",
                     });
     
                     const response = result.choices[0]?.message?.content || "Sorry, I couldn't understand that.";
